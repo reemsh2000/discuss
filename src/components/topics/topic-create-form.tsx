@@ -3,6 +3,9 @@ import { Input, Button, Textarea, Popover, PopoverTrigger, PopoverContent } from
 import * as actions from "@/actions";
 // import { useFormState } from "react-dom";
 import { useActionState, startTransition } from "react";
+import FormButton from "@/components/common/form-button";
+
+
 export default function TopicCreateForm() {
 	const [formState, action] = useActionState(actions.createTopic, {
 		errors: {},
@@ -26,9 +29,9 @@ export default function TopicCreateForm() {
 						<Input name="title" label="Title" labelPlacement="outside" placeholder="Enter topic title" required isInvalid={!!formState?.errors?.title} errorMessage={formState?.errors?.title?.join(", ")} />
 						<Textarea name="description" label="Description" labelPlacement="outside" placeholder="Enter topic description" required isInvalid={!!formState?.errors?.description} errorMessage={formState?.errors?.description?.join(", ")} />
 						{formState?.errors?._form ? <div className="rounded p-2 bg-red-200 border border-red-400">{formState?.errors?._form?.join(", ")}</div> : null}
-						<Button type="submit" className="mt-4">
+						<FormButton>
 							Submit
-						</Button>
+						</FormButton>
 					</div>
 				</form>
 			</PopoverContent>

@@ -1,5 +1,5 @@
-export default function PostShow() {
+export default function PostsShow() {
   return (
-    <div>PostShow</div>
+    <div>PostssssssShow</div>
   )
 }

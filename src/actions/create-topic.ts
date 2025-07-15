@@ -20,6 +20,7 @@ interface CreateTopicFormState {
      };
 }
 export async function createTopic(formState: CreateTopicFormState, formData: FormData): Promise<CreateTopicFormState> {
+   
      const result = createTopicSchema.safeParse({ title: formData.get('title'), description: formData.get('description') });
 
      if (!result.success) {
