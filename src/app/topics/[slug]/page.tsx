@@ -1,5 +1,5 @@
-export default function PostShowPage() {
+export default function TopicShowPage() {
   return (
-    <div>PostShow</div>
+    <div>topic show</div>
   )
 }

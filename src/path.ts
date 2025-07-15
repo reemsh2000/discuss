@@ -1,4 +1,4 @@
-export const paths = {
+const paths = {
    home(){
     return '/'
    },
@@ -14,6 +14,7 @@ export const paths = {
    postShow(topicId: string, postId: string) {
     return `/topics/${topicId}/posts/${postId}`
    },
-   
+
 
 }
+export default paths;
