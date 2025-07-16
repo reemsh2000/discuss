@@ -1,0 +1,1 @@
+import type { Comment } from "@prisma/client";
