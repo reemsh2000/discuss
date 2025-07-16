@@ -1,16 +1,14 @@
 'use client';
 
 import { Button } from "@nextui-org/react";
-import { useFormStatus } from "react-dom";
 
 interface FormButtonProps {
     children: React.ReactNode;
 }
 
-export default function FormButton({ children }: FormButtonProps) {
-    const  { pending } =useFormStatus();
-    console.log("FormButton pending:", pending);
+export default function FormButton({ isLoading, children }: FormButtonProps & { isLoading?: boolean }) {
+    console.log("FormButton pending:", isLoading);
     return (
-        <Button type="submit" isLoading={pending}>{children}</Button>
+        <Button type="submit" isLoading={isLoading}>{children}</Button>
     )
 }

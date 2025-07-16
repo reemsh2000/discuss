@@ -8,7 +8,7 @@ import paths  from '@/path';
 import { revalidatePath } from 'next/cache';
 // import { revalidatePath } from 'next/cache';
 const createTopicSchema = z.object({
-     title: z.string().min(5).regex(/^[a-zA-Z0-9]+$/, { message: "Title must be alphanumeric" }),
+     title: z.string().min(3).regex(/^[a-zA-Z0-9]+$/, { message: "Title must be alphanumeric" }),
      description: z.string().min(10),
 });
 
