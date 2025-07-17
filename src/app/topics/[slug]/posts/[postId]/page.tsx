@@ -3,7 +3,6 @@ import Link from "next/link";
 import PostShow from "@/components/posts/post-show";
 import CommentCreateForm from "@/components/comments/comment-create-form";
 import CommentList from "@/components/comments/comment-list";
-import { fetchCommentsByPostId } from "@/db/queries/comment";
 // interface PostShowPageProps {
 // 	params: {
 // 		postId: string;
@@ -20,7 +19,7 @@ export default async function PostShowPage({ params }: never) {
 
 			<PostShow postId={postId} />
 			<CommentCreateForm postId={postId} />
-			<CommentList fetchData={() => fetchCommentsByPostId(postId)} />
+			<CommentList postId = {postId} />
 		</div>
 	);
 }
