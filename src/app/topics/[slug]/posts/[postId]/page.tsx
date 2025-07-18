@@ -5,13 +5,13 @@ import CommentCreateForm from "@/components/comments/comment-create-form";
 import CommentList from "@/components/comments/comment-list";
 import { Suspense } from "react";
 import PostShowLoading from "@/components/posts/post-show-loading";
-// interface PostShowPageProps {
-// 	params: {
-// 		postId: string;
-// 		slug: string;
-// 	};
-// }
-export default async function PostShowPage({ params }: never) {
+interface PostShowPageProps {
+	params: Promise< {
+		postId: string;
+		slug: string;
+	}>;
+}
+export default async function PostShowPage({ params }: PostShowPageProps) {
 	const { slug, postId } = await params;
 	await new Promise((resolve) => setTimeout(resolve, 40000));
 	return (
