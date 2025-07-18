@@ -38,3 +38,20 @@ export function fetchTopPosts() {
         }]
     });
 }
+
+export function fetchPostsByTerm(term: string) {
+    console.log({ term })
+    return db.post.findMany({
+        include: {
+            topic: { select: { slug: true } },
+            user: { select: { name: true } },
+            _count: { select: { comments: true } },
+        },
+        where: {
+            OR: [
+                { title: { contains: term } },
+                { content: { contains: term } }
+            ]
+        }
+    });
+}
