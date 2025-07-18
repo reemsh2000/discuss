@@ -30,8 +30,11 @@ export function fetchTopPosts() {
             _count: { select: { comments: true } },
         },
         take: 10,
-        orderBy: {
-            createdAt: 'desc'
-        }
+        orderBy: [{
+            comments: {
+                _count: 'desc'
+
+            }
+        }]
     });
 }
